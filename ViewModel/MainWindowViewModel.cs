@@ -19,6 +19,7 @@ namespace Monefy.ViewModel
             get { return currentView; } 
             set { Set(ref currentView, value); }
         }
+
         public MainWindowViewModel(IMessenger messenger)
         {
             _messenger = messenger;

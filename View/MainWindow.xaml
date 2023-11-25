@@ -9,22 +9,23 @@
         xmlns:local="clr-namespace:Monefy.View" xmlns:viewmodel="clr-namespace:Monefy.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:MainWindowViewModel}"
         mc:Ignorable="d" Height="750" Width="400" WindowStyle="None" Background="White">
     <Grid>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="0.2*" />
             <ColumnDefinition Width="0.2*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.072*"/>
-            <RowDefinition Height="0.9*"/>
+            <RowDefinition Height="11*"/>
+            <RowDefinition Height="239*"/>
         </Grid.RowDefinitions>
-        <Button BorderBrush="Transparent" Grid.Column="1" Click="Minimize" Background="Transparent">
+        <Button BorderBrush="Transparent" Grid.Column="1" Click="Minimize" Background="Transparent" Grid.ColumnSpan="2" Margin="0,0,57,0">
             <mD:PackIcon Kind="WindowMinimize" VerticalAlignment="Center" HorizontalAlignment="Center" Height="30px" Width="30px" />
         </Button>
 
         <Button BorderBrush="Transparent" Grid.Column="2" Click="Close" Background="Transparent">
             <mD:PackIcon Kind="Close" VerticalAlignment="Center" HorizontalAlignment="Center" Height="30px" Width="30px"/>
         </Button>
-        <ContentControl Grid.Row="1" Grid.ColumnSpan="4" Content="{Binding CurrentView}"/>
+        <ContentControl Grid.Row="1" Grid.ColumnSpan="3" Content="{Binding CurrentView}"/>
     </Grid>
 </Window>

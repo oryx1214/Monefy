@@ -64,7 +64,7 @@
                 Margin="0 0 60 0"
             Command="{Binding Back}">
                     <mD:PackIcon Kind="ArrowLeft" 
-                                 Foreground="White"/>
+                                 Foreground="White" Height="17" Width="24"/>
 
                 </Button>
                 <TextBlock
@@ -88,14 +88,14 @@
         <Button
             Background="AliceBlue"
             Grid.Column="3"
-            Grid.Row="3"
+            Grid.Row="2"
             Content="+"
             FontSize="25"
             BorderBrush="#9aeda9"
-            Margin="4,5,4,88"
+            Margin="4,81,4,5"
             BorderThickness="2" Grid.RowSpan="2"
             Command="{Binding OperationCommand}"
-        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"/>
+        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}" Click="Button_Click"/>
 
 
         <Button
@@ -208,7 +208,7 @@
     Content="4"
     FontSize="25"
     BorderBrush="#9aeda9"
-            Margin="4,5,4,87"
+            Margin="4,0,4,92"
     BorderThickness="2" Grid.RowSpan="2"
             Command="{Binding DigitCommand}"
         CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"/>
@@ -221,7 +221,7 @@
     Content="5"
     FontSize="25"
     BorderBrush="#9aeda9"
-            Margin="4,5,4,87"
+            Margin="4,0,4,92"
     BorderThickness="2" Grid.RowSpan="2"
             Command="{Binding DigitCommand}"
         CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"/>
@@ -234,7 +234,7 @@
     Content="6"
     FontSize="25"
     BorderBrush="#9aeda9"
-            Margin="4,5,4,87"
+            Margin="4,0,4,92"
     BorderThickness="2" Grid.RowSpan="2"
             Command="{Binding DigitCommand}"
         CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"/>
@@ -248,7 +248,7 @@
     Content="-"
     FontSize="25"
     BorderBrush="#9aeda9"
-            Margin="4,5,4,87"
+            Margin="4,0,4,92"
     BorderThickness="2" Grid.RowSpan="2"
             Command="{Binding OperationCommand}"
         CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"/>
@@ -258,11 +258,11 @@
         <Button
     Background="AliceBlue"
     Grid.Column="0"
-    Grid.Row="3"
+    Grid.Row="2"
     Content="1"
     FontSize="25"
     BorderBrush="#9aeda9"
-            Margin="4,5,4,88"
+            Margin="4,81,4,5"
     BorderThickness="2" Grid.RowSpan="2" Command="{Binding DigitCommand}"
         CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"/>
 
@@ -270,11 +270,11 @@
         <Button
     Background="AliceBlue"
     Grid.Column="1"
-    Grid.Row="3"
+    Grid.Row="2"
     Content="2"
     FontSize="25"
     BorderBrush="#9aeda9"
-            Margin="4,5,4,88"
+            Margin="4,81,4,5"
     BorderThickness="2" Grid.RowSpan="2" Command="{Binding DigitCommand}"
         CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"/>
 
@@ -282,27 +282,13 @@
         <Button
     Background="AliceBlue"
     Grid.Column="2"
-    Grid.Row="3"
+    Grid.Row="2"
     Content="3"
     FontSize="25"
     BorderBrush="#9aeda9"
-            Margin="4,5,4,88"
-    BorderThickness="2" Grid.RowSpan="2" Command="{Binding DigitCommand}"
-        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"/>
-
-
-        <Button
-        Background="AliceBlue"
-        Grid.Column="3"
-        Grid.Row="3"
-        Content="+"
-        FontSize="25"
-        BorderBrush="#9aeda9"
-        Margin="4,5,4,88"
-        BorderThickness="2" Grid.RowSpan="2"
-        Command="{Binding OperationCommand}"
-        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"
-        />
+            Margin="4,81,4,5"
+    BorderThickness="2" Command="{Binding DigitCommand}"
+        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}" Grid.RowSpan="2"/>
 
         <Button
     Background="AliceBlue"
@@ -313,7 +299,8 @@
     Grid.ColumnSpan="4"
     Margin="2,5,2,2"
     FontFamily="Calibri" 
-    Content="ВЫБОР КАТЕГОРИИ"
+    Content="ДОБАВИТЬ"
+    Command="{Binding SendValueCommand}"
 >
         </Button>
 

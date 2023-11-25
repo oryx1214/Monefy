@@ -15,15 +15,13 @@ using System.Windows.Shapes;
 
 namespace Monefy.View
 {
-    /// <summary>
-    /// Логика взаимодействия для CalculatorView.xaml
-    /// </summary>
     public partial class CalculatorView : UserControl
     {
         public CalculatorView()
         {
             InitializeComponent();
         }
+
         private void inputTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             string regexPattern = @"[^0-9.]";
@@ -36,6 +34,21 @@ namespace Monefy.View
             {
                 e.Handled = true;
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

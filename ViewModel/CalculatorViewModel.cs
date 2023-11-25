@@ -13,26 +13,52 @@ using GalaSoft.MvvmLight.Command;
 using System.Reflection;
 using GalaSoft.MvvmLight.Messaging;
 using Monefy.Services.Interfaces;
+using Monefy.Messages;
+using Monefy.Model;
+using LiveCharts.SeriesAlgorithms;
+using LiveCharts.Wpf;
+using LiveCharts;
+using System.Windows.Media;
 
 namespace Monefy.ViewModel
 {
     public class CalculatorViewModel : ViewModelBase
     {
+        private readonly IMessenger _messenger;
         private readonly INavigationService _navigationService;
+        private readonly IDataService _dataService;
         private bool hasDecimalPoint = false;
         private string currentOperation = string.Empty;
         private string inputText = string.Empty;
+
+        public Button MyButton { get; set; } 
+        public PieChart Chart { get; set; }
+
         public string InputText
         {
             get { return inputText; }
             set { Set(ref inputText, value); }
         }
 
-        public CalculatorViewModel(INavigationService navigationService)
+        public CalculatorViewModel(IMessenger messenger, INavigationService navigationService, IDataService dataService)
         {
             _navigationService = navigationService;
+            _dataService = dataService;
+            _messenger = messenger;
 
+            _messenger.Register<GenericMessage>(this, message =>
+            {
+                if (message.Data as Button != null)
+                {
+                    MyButton = message.Data as Button;
+                }
+                if (message.Data as PieChart != null)
+                {
+                    Chart = message.Data as PieChart;
+                }
+            });
         }
+        private MainViewModel _mainViewModel { get; set; }
 
         public RelayCommand<string> DigitCommand
         {
@@ -45,7 +71,6 @@ namespace Monefy.ViewModel
             });
         }
         
-
         public RelayCommand<string> OperationCommand
         {
             get => new(param =>
@@ -79,6 +104,42 @@ namespace Monefy.ViewModel
             });
         }
 
+        public RelayCommand SendValueCommand
+        {
+            get => new(() => 
+            {
+                var ans = new SpandingModel(Convert.ToInt32(inputText));
+                double amount = 0;
+                double.TryParse(inputText, out amount);
+
+                if((MyButton.Foreground as SolidColorBrush)?.Color != Colors.LimeGreen)
+                {
+                    foreach (var item in Chart.Series)
+                    {
+                        PieSeries series = item as PieSeries;
+                        if(series.Fill == MyButton.Foreground)
+                        {
+                            series.Values = new ChartValues<double> { (double)series.Values[0] + amount };
+
+                            _dataService.SendData(MyButton);
+                            _dataService.SendData(ans);
+                            _navigationService.NavigateTo<MainViewModel>();
+                            return;
+                        }
+                    }
+                    Chart.Series.Add(new PieSeries()
+                    {
+                        Fill = MyButton.Foreground,
+                        Values = new ChartValues<double> { amount }
+                    });
+                }
+
+                _dataService.SendData(MyButton);
+                _dataService.SendData(ans);
+                _navigationService.NavigateTo<MainViewModel>();
+            });
+        }
+        
         public RelayCommand DeleteCommand
         {
             get => new(() =>

@@ -7,11 +7,11 @@
              mc:Ignorable="d" 
              xmlns:mD="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:wp="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf" xmlns:viewmodel="clr-namespace:Monefy.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
-              Height="750">
+              Height="750" Background="AliceBlue">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition
-    Height="50"/>
+                           Height="50"/>
             <RowDefinition Height="172*"/>
             <RowDefinition Height="171*"/>
             <RowDefinition Height="171*"/>
@@ -26,78 +26,68 @@
         </Grid.ColumnDefinitions>
 
 
-
         <Border
-  Background="#9aeda9"
-  Grid.ColumnSpan="4">
+            Background="#9aeda9"
+            Grid.ColumnSpan="4">
             <Grid>
                 <StackPanel
-      HorizontalAlignment="Right"
-         Orientation="Horizontal"
-         >
+                    HorizontalAlignment="Right"
+                    Orientation="Horizontal">
                     <Button
-          Background="#9aeda9" 
-          Height="50"   
-          Width="33"
-          BorderThickness="0"
-          Foreground="White"
-             >
-
-                        <mD:PackIcon Kind="Search" />
-
-
+                Background="#9aeda9" 
+                Height="50"   
+                Width="33"
+                BorderThickness="0"
+                Foreground="White">
+                        <mD:PackIcon Kind="Search" Height="19" Width="23" />
                     </Button>
 
+
                     <Button
-             Background="#9aeda9" 
-             Height="50"   
-             Width="33"
-             BorderThickness="0"
-             Foreground="White"
-             >
-                        <mD:PackIcon Kind="Exchange" />
-
-
-
-                    </Button>
-                    <Button
-             
-             Background="#9aeda9"
-             Height="50"
-             Width="33"
-             BorderThickness="0"
-             Foreground="White"
-             >
-                        <mD:PackIcon Kind="Menu" />
-
-
+                        Background="#9aeda9" 
+                        Height="50"   
+                        Width="33"
+                        BorderThickness="0"
+                        Foreground="White">
+                        <mD:PackIcon Kind="Exchange" Height="19" Width="23" />
                     </Button>
 
+
+                    <Button
+                        Background="#9aeda9"
+                        Height="50"
+                        Width="33"
+                        BorderThickness="0"
+                        Foreground="White">
+                        <mD:PackIcon Kind="Menu" Height="19" Width="23" />
+                    </Button>
                 </StackPanel>
 
-                <StackPanel
-         Grid.Row= "1"
-         HorizontalAlignment="Left"
-         Orientation="Horizontal">
-                    <Button
-             Height="50"
-             Width="33"
-            Foreground="White"
-             Background="#9aeda9"
-             BorderThickness="0">
-                        <mD:PackIcon Kind="ArrowLeft" Height="30px" Width="30px"/>
 
+                <StackPanel
+                        Grid.Row= "1"
+                        HorizontalAlignment="Left"
+                        Orientation="Horizontal">
+
+
+                    <Button
+                        Height="50"
+                        Width="33"
+                        Foreground="White"
+                        Background="#9aeda9"
+                        BorderThickness="0">
+                        <mD:PackIcon Kind="ArrowLeft" Height="19" Width="23"/>
                     </Button>
 
                     <TextBlock
-     Text="Monefy" 
-     FontStyle="Italic"
-     Foreground="AliceBlue"
-     FontSize="20"
-     HorizontalAlignment="Center"
-     VerticalAlignment="Center"
-     Height="30" 
-     Width="100">
+                        Text="Monefy" 
+                        FontStyle="Italic"
+                        Foreground="AliceBlue"
+                        FontSize="20"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Height="30" 
+                        Width="100">
                     </TextBlock>
                 </StackPanel>
             </Grid>
@@ -105,218 +95,240 @@
 
 
         <Button
- Grid.Row="3"
- Grid.Column="1"
- Grid.ColumnSpan="2"
- Grid.RowSpan="1"
- BorderBrush="Green"
- BorderThickness="2"
+            Grid.Row="3"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Grid.RowSpan="1"
+            BorderBrush="Green"
+            BorderThickness="2"
+            Background="#9aeda9" 
+            Foreground="White"
+            Margin="25,69,25,69" 
+            Content="{Binding  Balance.Value,UpdateSourceTrigger=PropertyChanged}" Click="Button_Click"
+            FontSize="23"
+            FontStyle="Italic"
+            
+            />
 
- Background="#9aeda9" Margin="25,69,25,69" Content="Баланс: 0,00rub"/>
 
 
         <Button
- Grid.Row="3"
- Grid.Column="0"
- Grid.ColumnSpan="1"
- Grid.RowSpan="1"
- Background="AliceBlue"
- Foreground="#9aeda9"
- BorderThickness="0" Margin="30,65,30,65">
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="1"
+            Grid.RowSpan="1"
+            Background="AliceBlue"
+            Foreground="#9aeda9"      
+            BorderThickness="0" 
+            Margin="30,65,30,65">
             <mD:PackIcon Kind="Menu" Height="30px" Width="30px"/>
         </Button>
 
 
         <Button
- Grid.Row="3"
- Grid.Column="3"
-Foreground="#9aeda9"
- Background="AliceBlue"
- BorderThickness="0" Margin="30,65,30,65">
+            Grid.Row="3"
+            Grid.Column="3"
+            Foreground="#9aeda9"
+            Background="AliceBlue"
+            BorderThickness="0" Margin="30,65,30,65">
             <mD:PackIcon Kind="Menu" Height="30px" Width="30px"/>
         </Button>
 
 
 
-        <Grid Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Margin="0,170,0,0" Grid.RowSpan="2">
+
+        <Grid 
+            Grid.Row="4" 
+            Margin="30,10,10,10" Grid.ColumnSpan="3" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="65*"/>
+            </Grid.RowDefinitions>
+
 
             <Button
-  VerticalAlignment="Top"
-  Height="76"
-  Width="76"
-  Background="AliceBlue"
-  BorderThickness="0">
-                <mD:PackIcon Foreground="Red" Kind="Minus" Height="50px" Width="50px"/>
-            </Button>
-        </Grid>
-
-
-        <Grid Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2" Margin="0,170,0,0" Grid.RowSpan="2" >
-            <Button
-  
-  VerticalAlignment="Top"
-   Height="76"
-   Width="76"
-   Background="AliceBlue"
-  BorderThickness="0"
-     Command="{Binding Plus}">
-                <mD:PackIcon Foreground="LimeGreen" Kind="Plus" Height="50px" Width="50px"/>
+            VerticalAlignment="Top"
+            Height="76"
+            Width="76"
+            Background="AliceBlue"
+            Foreground="LimeGreen" 
+            BorderThickness="0"
+            Command="{Binding Plus}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}}" Margin="-37,-32,86,0" Grid.RowSpan="2">
+                <mD:PackIcon 
+            Kind="PlusCircleOutline" 
+            Height="50px" 
+            Width="50px"/>
             </Button>
         </Grid>
 
 
         <Button
- Grid.Row="1"
- Grid.Column="0"
- Grid.ColumnSpan="1"
- Margin="30,40,30,94"
- BorderThickness="0"
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="1"
+            Margin="30,40,30,94"
+            BorderThickness="0"
             Foreground="Brown"
- Background="AliceBlue">
-            <mD:PackIcon Kind="Cocktail" />
+            Background="AliceBlue"
+            Command="{Binding Add}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
+            <mD:PackIcon Kind="Cocktail" Height="35" Width="35"/>
         </Button>
 
 
         <Button
- 
- Grid.Row="2"
- Grid.Column="3"
- Background="AliceBlue"
- BorderThickness ="0" Margin="30,125,30,6"
- Foreground ="Red"            >
-
-            <mD:PackIcon Kind="Gift" />
-
+            Grid.Row="2"
+            Grid.Column="3"
+            Background="AliceBlue"
+            BorderThickness ="0" 
+            Margin="30,125,30,6"
+            Foreground ="Red"
+            Command="{Binding Add}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
+            <mD:PackIcon Kind="Gift" Height="34" Width="34"/>
         </Button>
 
+
         <Button
- 
- 
- Grid.Row="2"
- Grid.Column="2"
- Grid.ColumnSpan="1"
- Background="AliceBlue"
- Foreground="Gold"
- BorderThickness ="0" Margin="30,125,30,6">
-            <mD:PackIcon Kind="Taxi" />
-
-
-
+            Grid.Row="2"
+            Grid.Column="2"
+            Grid.ColumnSpan="1"
+            Background="AliceBlue"
+            Foreground="Gold"
+            BorderThickness ="0" Margin="30,125,30,6"
+            Command="{Binding Add}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
+            <mD:PackIcon Kind="Taxi" Height="34" Width="35" HorizontalAlignment="Center"/>
         </Button>
 
+
         <Button
-             Grid.Row="2"
-             Grid.Column="1"
-             Grid.ColumnSpan="1"
-             Background="AliceBlue"
+            Grid.Row="2"
+            Grid.Column="1"
+            Grid.ColumnSpan="1"
+            Background="AliceBlue"
             Foreground="Blue"
-             BorderThickness ="0" Margin="30,125,30,6">
-            <mD:PackIcon Kind="House" />
-
+            BorderThickness ="0" Margin="30,125,30,6"
+            Command="{Binding Add}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
+            <mD:PackIcon Kind="House" Height="34" Width="35"/>
         </Button>
 
-        <wp:PieChart Grid.ColumnSpan="4" Margin="29,93,30,59" Grid.RowSpan="2" Grid.Row="1" >
-            <wp:PieChart.Series>
-                <wp:PieSeries Title="Phone" Values="1"   DataLabels="True" Fill="Yellow"/>
-                <wp:PieSeries Title="Present" Values="1"   DataLabels="True" Fill="Red"/>
-                <wp:PieSeries Title="Themrature" Values="1"   DataLabels="True" Fill="Green"/>
-                <wp:PieSeries Title="Transport" Values="1"   DataLabels="True" Fill="Purple"/>
-                <wp:PieSeries Title="Transport" Values="1"   DataLabels="True" Fill="GreenYellow"/>
-                <wp:PieSeries Title="Transport" Values="1"   DataLabels="True" Fill="SaddleBrown"/>
-                <wp:PieSeries Title="Transport" Values="1"   DataLabels="True" Fill="Blue"/>
-                <wp:PieSeries Title="Transport" Values="1"   DataLabels="True" Fill="Aqua"/>
-                <wp:PieSeries Title="Transport" Values="1"   DataLabels="True" Fill="Orange"/>
-                <wp:PieSeries Title="Transport" Values="1"   DataLabels="True" Fill="Gold"/>
-                <wp:PieSeries Title="Transport" Values="1"   DataLabels="True" Fill="Black"/>
-            </wp:PieChart.Series>
+
+        <Button
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="1"
+            Background="AliceBlue"
+            Foreground ="Orange"
+            BorderThickness ="0" Margin="30,40,30,91"
+            Command="{Binding Add}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
+            <mD:PackIcon Kind="Phone" Height="34" Width="35"/>
+        </Button>
+
+
+        <Button 
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="1"
+            Background="AliceBlue"
+            BorderThickness ="0" 
+            Margin="30,125,30,6"
+            Foreground="Green"
+            Command="{Binding Add}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
+            <mD:PackIcon Kind="Thermometer" Height="34" Width="35" />
+        </Button>
+
+
+        <Button
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="1"
+            BorderThickness="0"
+            Foreground="GreenYellow"
+            Background="AliceBlue" 
+            Margin="30,127,30,6"
+            Command="{Binding Add}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
+            <mD:PackIcon Kind="Train" Height="34" Width="35" />
+        </Button>
+
+
+        <Button 
+            Grid.Row="1"
+            Grid.Column="1"
+            Grid.ColumnSpan="1"
+            Background="AliceBlue"
+            Foreground="Purple"
+            BorderThickness ="0" 
+            Margin="30,42,30,91"
+            Command="{Binding Add}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
+            <mD:PackIcon Kind="Food" Height="35" Width="34" />
+        </Button>
+
+
+        <Button
+            Grid.Column="2"
+            Grid.Row="1"
+            Grid.ColumnSpan="1"
+            Foreground="Aqua"
+            Background="AliceBlue"
+            BorderThickness ="0" Margin="30,42,30,92"
+            Command="{Binding Add}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
+            <mD:PackIcon Kind="ToothbrushPaste" Height="35" Width="35"/>
+        </Button>
+
+
+        <Button
+            Grid.Column="3"
+            Grid.Row="1"
+            Background="AliceBlue"
+            Foreground="Gray"
+            BorderThickness ="0" 
+            Margin="30,42,30,92"
+            Command="{Binding Add}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
+            <mD:PackIcon Kind="Cat" Height="35" Width="35" />
+        </Button>
+
+
+        <Button
+            Grid.Row="1"
+            Grid.Column="3"
+            BorderThickness="0"
+            Background="AliceBlue" 
+            Margin="30,127,30,6"
+            Command="{Binding Add}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
+            <mD:PackIcon Kind="TshirtCrew" Height="35" Width="35" />
+        </Button>
+
+
+        <Button
+            Grid.Row="2"
+            Grid.Column="3"
+            BorderThickness="0"
+            Foreground="Yellow"
+            Background="AliceBlue" Margin="30,40,30,91"
+            Command="{Binding Add}"
+            CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
+
+            <mD:PackIcon Kind="Soccer" Height="35" Width="35" />
+        </Button>
+
+
+        <wp:PieChart 
+            Grid.ColumnSpan="4" 
+            Margin="100,100,100,50" 
+            Grid.RowSpan="2" 
+            Grid.Row="1" 
+            Content="{Binding Chart}">
         </wp:PieChart>
 
-
-        <Button
-Grid.Row="2"
- Grid.Column="0"
- Grid.ColumnSpan="1"
- Background="AliceBlue"
-            Foreground ="Orange"
- BorderThickness ="0" Margin="30,40,30,91"
- >
-            <mD:PackIcon Kind="Phone" />
-
-
-
-
-        </Button>
-
-        <Button 
- Grid.Row="2"
- Grid.Column="0"
- Grid.ColumnSpan="1"
- Background="AliceBlue"
- BorderThickness ="0" Margin="30,125,30,6"
- Foreground="Green">
-            <mD:PackIcon Kind="Thermometer" />
-
-        </Button>
-
-        <Button
- Grid.Row="1"
- Grid.Column="0"
- Grid.ColumnSpan="1"
- BorderThickness="0"
-            Foreground="GreenYellow"
- Background="AliceBlue" Margin="30,127,30,6">
-            <mD:PackIcon Kind="Train" />
-
-        </Button>
-        <Button 
- Grid.Row="1"
- Grid.Column="1"
- Grid.ColumnSpan="1"
- Background="AliceBlue"
-            Foreground="Purple"
- BorderThickness ="0" Margin="30,42,30,91">
-            <mD:PackIcon Kind="Food" />
-
-        </Button>
-
-        <Button
- Grid.Column="2"
- Grid.Row="1"
- Grid.ColumnSpan="1"
- Foreground="Aqua"
- Background="AliceBlue"
- BorderThickness ="0" Margin="30,42,30,92">
-            <mD:PackIcon Kind="ToothbrushPaste"/>
-        </Button>
-
-        <Button
- Grid.Column="3"
- Grid.Row="1"
- Background="AliceBlue"
-            Foreground="Gray"
- BorderThickness ="0" Margin="30,42,30,92">
-            <mD:PackIcon Kind="Cat" />
-        </Button>
-
-        <Button
- Grid.Row="1"
- Grid.Column="3"
- BorderThickness="0"
- Background="AliceBlue" Margin="30,127,30,6"
-            >
-            <mD:PackIcon Kind="TshirtCrew" />
-        </Button>
-
-        <Button
-  
- Grid.Row="2"
- Grid.Column="3"
- BorderThickness="0"
- Foreground="Yellow"
- Background="AliceBlue" Margin="30,40,30,91"
-            >
-            <mD:PackIcon Kind="Soccer" />
-
-        </Button>
     </Grid>
 </UserControl>
