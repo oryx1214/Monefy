@@ -108,7 +108,7 @@ namespace Monefy.ViewModel
         {
             get => new(() => 
             {
-                var ans = new SpandingModel(Convert.ToInt32(inputText));
+                var ans = new SpandingModel(Convert.ToInt32(inputText), MyButton.Name, MyButton.Foreground);
                 double amount = 0;
                 double.TryParse(inputText, out amount);
 
@@ -129,6 +129,8 @@ namespace Monefy.ViewModel
                     }
                     Chart.Series.Add(new PieSeries()
                     {
+                        Title = MyButton.Name,
+                        DataLabels = true,
                         Fill = MyButton.Foreground,
                         Values = new ChartValues<double> { amount }
                     });

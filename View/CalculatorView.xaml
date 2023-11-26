@@ -8,6 +8,7 @@
              Background="AliceBlue"
              Height="660">
 
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition
@@ -19,34 +20,24 @@
                 Height="86"/>
             <RowDefinition/>
             <RowDefinition>
-
             </RowDefinition>
             <RowDefinition>
-
             </RowDefinition>
             <RowDefinition>
-
             </RowDefinition>
             <RowDefinition>
-
             </RowDefinition>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition>
-
             </ColumnDefinition>
             <ColumnDefinition>
-
             </ColumnDefinition>
             <ColumnDefinition>
-
             </ColumnDefinition>
-
             <ColumnDefinition>
-
             </ColumnDefinition>
-
         </Grid.ColumnDefinitions>
 
 
@@ -54,36 +45,36 @@
             Background="#9aeda9"
             Grid.ColumnSpan="4">
 
+
             <StackPanel Orientation="Horizontal">
+
+
                 <Button
-                Height="50"
-                Width="33"
-                 
+                Height="44"
+                Width="34"              
                 Background="#9aeda9"
                 BorderThickness="0"
                 Margin="0 0 60 0"
-            Command="{Binding Back}">
-                    <mD:PackIcon Kind="ArrowLeft" 
-                                 Foreground="White" Height="17" Width="24"/>
-
+                Command="{Binding Back}">
+                    <mD:PackIcon 
+                Kind="ArrowBack" 
+                Foreground="White" 
+                Height="25" 
+                Width="25" 
+                HorizontalAlignment="Center"/>
                 </Button>
                 <TextBlock
-                    Text="Новый доход" 
-                    FontStyle="Normal"
+                    Text="Добавление" 
+                    FontStyle="Italic"
+                    FontWeight="DemiBold"
                     Foreground="AliceBlue"
                     FontSize="20"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
                     Height="24" 
                     Width="125"
-                    Margin="11 0 0 0"
-                    
-        
-                    >
-                </TextBlock>
-
+                    Margin="0 0 0 0"/>
             </StackPanel>
         </Border>
+
 
         <Button
             Background="AliceBlue"
@@ -95,245 +86,261 @@
             Margin="4,81,4,5"
             BorderThickness="2" Grid.RowSpan="2"
             Command="{Binding OperationCommand}"
-        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}" Click="Button_Click"/>
+            CommandParameter="{Binding Content, 
+            RelativeSource={RelativeSource Self}}"
+            Click="Button_Click"/>
 
 
         <Button
-    Background="AliceBlue"
-    Grid.Column="0"
-    Grid.Row="6"
-    Content="."
-    FontSize="25"
-    BorderBrush="#9aeda9"
-    BorderThickness="2"
-    Margin="4,5,4,0"
-            Command="{Binding DotCommand}"
-            />
+            Background="AliceBlue"
+            Grid.Column="0"
+            Grid.Row="6"
+            Content="."
+            FontSize="25"
+            BorderBrush="#9aeda9"
+            BorderThickness="2"
+            Margin="4,5,4,0"
+            Command="{Binding DotCommand}"/>
 
 
         <Button
-    Background="AliceBlue"
-    Grid.Column="1"
-    Grid.Row="6"
-    Content="0"
-    FontSize="25"
-    BorderBrush="#9aeda9"
-    BorderThickness="2"
+            Background="AliceBlue"
+            Grid.Column="1"
+            Grid.Row="6"
+            Content="0"
+            FontSize="25"
+            BorderBrush="#9aeda9"
+            BorderThickness="2"
             Margin="4,5,4,0"
             Command="{Binding DigitCommand}"
-        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"/>
+            CommandParameter="{Binding Content, 
+            RelativeSource={RelativeSource Self}}"/>
 
 
         <Button
-    Background="AliceBlue"
-    Grid.Column="2"
-    Grid.Row="6"
-    Content="="
-    FontSize="25"
-    BorderBrush="#9aeda9"
+            Background="AliceBlue"
+            Grid.Column="2"
+            Grid.Row="6"
+            Content="="
+            FontSize="25"
+            BorderBrush="#9aeda9"
             Margin="4,5,4,0"
-    BorderThickness="2"
-             Command="{Binding EqualCommand}"/>
+            BorderThickness="2"
+            Command="{Binding EqualCommand}"/>
 
 
         <Button
-    Background="AliceBlue"
-    Grid.Column="3"
-    Grid.Row="6"
-    Content="÷"
-    FontSize="25"
-    BorderBrush="#9aeda9"
+            Background="AliceBlue"
+            Grid.Column="3"
+            Grid.Row="6"
+            Content="÷"
+            FontSize="25"
+            BorderBrush="#9aeda9"
             Margin="4,5,4,0"
-    BorderThickness="2"
+            BorderThickness="2"
             Command="{Binding OperationCommand}"
-        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"/>
-
+            CommandParameter="{Binding Content,
+            RelativeSource={RelativeSource Self}}"/>
 
 
         <Button
-    Background="AliceBlue"
-    Grid.Column="0"
-    Grid.Row="5"
-    Content="7"
-    FontSize="25"
-    BorderBrush="#9aeda9"
-    BorderThickness="2"
+            Background="AliceBlue"
+            Grid.Column="0"
+            Grid.Row="5"
+            Content="7"
+            FontSize="25"
+            BorderBrush="#9aeda9"
+            BorderThickness="2"
             Margin="4,5,4,0"
             Command="{Binding DigitCommand}"
-        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"/>
+            CommandParameter="{Binding Content, 
+            RelativeSource={RelativeSource Self}}"/>
+
 
         <Button
-    Background="AliceBlue"
-    Grid.Column="1"
-    Grid.Row="5"
-    Content="8"
-    FontSize="25"
-    BorderBrush="#9aeda9"
+            Background="AliceBlue"
+            Grid.Column="1"
+            Grid.Row="5"
+            Content="8"
+            FontSize="25"
+            BorderBrush="#9aeda9"
             Margin="4,5,4,0"
-    BorderThickness="2"
+            BorderThickness="2"
             Command="{Binding DigitCommand}"
-        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"/>
+            CommandParameter="{Binding Content,
+            RelativeSource={RelativeSource Self}}"/>
 
 
         <Button
-    Background="AliceBlue"
-    Grid.Column="2"
-    Grid.Row="5"
-    Content="9"
-    FontSize="25"
-    BorderBrush="#9aeda9"
+            Background="AliceBlue"
+            Grid.Column="2"
+            Grid.Row="5"
+            Content="9"
+            FontSize="25"
+            BorderBrush="#9aeda9"
             Margin="4,5,4,0"
-    BorderThickness="2"
+            BorderThickness="2"
             Command="{Binding DigitCommand}"
-        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"/>
+            CommandParameter="{Binding Content,
+            RelativeSource={RelativeSource Self}}"/>
 
 
         <Button
-    Background="AliceBlue"
-    Grid.Column="3"
-    Grid.Row="5"
-    Content="×"
-    FontSize="25"
-    BorderBrush="#9aeda9"
+            Background="AliceBlue"
+            Grid.Column="3"
+            Grid.Row="5"
+            Content="×"
+            FontSize="25"
+            BorderBrush="#9aeda9"
             Margin="4,5,4,0"
-    BorderThickness="2"
+            BorderThickness="2"
             Command="{Binding OperationCommand}"
-        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"/>
+            CommandParameter="{Binding Content, 
+            RelativeSource={RelativeSource Self}}"/>
 
 
         <Button
-    Background="AliceBlue"
-    Grid.Column="0"
-    Grid.Row="4"
-    Content="4"
-    FontSize="25"
-    BorderBrush="#9aeda9"
+            Background="AliceBlue"
+            Grid.Column="0"
+            Grid.Row="4"
+            Content="4"
+            FontSize="25"
+            BorderBrush="#9aeda9"
             Margin="4,0,4,92"
-    BorderThickness="2" Grid.RowSpan="2"
+            BorderThickness="2" Grid.RowSpan="2"
             Command="{Binding DigitCommand}"
-        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"/>
+            CommandParameter="{Binding Content, 
+            RelativeSource={RelativeSource Self}}"/>
 
 
         <Button
-    Background="AliceBlue"
-    Grid.Column="1"
-    Grid.Row="4"
-    Content="5"
-    FontSize="25"
-    BorderBrush="#9aeda9"
+            Background="AliceBlue"
+            Grid.Column="1"
+            Grid.Row="4"
+            Content="5"
+            FontSize="25"
+            BorderBrush="#9aeda9"
             Margin="4,0,4,92"
-    BorderThickness="2" Grid.RowSpan="2"
+            BorderThickness="2" Grid.RowSpan="2"
             Command="{Binding DigitCommand}"
-        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"/>
+            CommandParameter="{Binding Content, 
+            RelativeSource={RelativeSource Self}}"/>
 
 
         <Button
-    Background="AliceBlue"
-    Grid.Column="2"
-    Grid.Row="4"
-    Content="6"
-    FontSize="25"
-    BorderBrush="#9aeda9"
+            Background="AliceBlue"
+            Grid.Column="2"
+            Grid.Row="4"
+            Content="6"
+            FontSize="25"
+            BorderBrush="#9aeda9"
             Margin="4,0,4,92"
-    BorderThickness="2" Grid.RowSpan="2"
+            BorderThickness="2" Grid.RowSpan="2"
             Command="{Binding DigitCommand}"
-        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"/>
-
+            CommandParameter="{Binding Content, 
+            RelativeSource={RelativeSource Self}}"/>
 
 
         <Button
-    Background="AliceBlue"
-    Grid.Column="3"
-    Grid.Row="4"
-    Content="-"
-    FontSize="25"
-    BorderBrush="#9aeda9"
+            Background="AliceBlue"
+            Grid.Column="3"
+            Grid.Row="4"
+            Content="-"
+            FontSize="25"
+            BorderBrush="#9aeda9"
             Margin="4,0,4,92"
-    BorderThickness="2" Grid.RowSpan="2"
+            BorderThickness="2" Grid.RowSpan="2"
             Command="{Binding OperationCommand}"
-        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"/>
+            CommandParameter="{Binding Content, 
+            RelativeSource={RelativeSource Self}}"/>
 
 
 
         <Button
-    Background="AliceBlue"
-    Grid.Column="0"
-    Grid.Row="2"
-    Content="1"
-    FontSize="25"
-    BorderBrush="#9aeda9"
+            Background="AliceBlue"
+            Grid.Column="0"
+            Grid.Row="2"
+            Content="1"
+            FontSize="25"
+            BorderBrush="#9aeda9"
             Margin="4,81,4,5"
-    BorderThickness="2" Grid.RowSpan="2" Command="{Binding DigitCommand}"
-        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"/>
+            BorderThickness="2" Grid.RowSpan="2" 
+            Command="{Binding DigitCommand}"
+            CommandParameter="{Binding Content, 
+            RelativeSource={RelativeSource Self}}"/>
 
 
         <Button
-    Background="AliceBlue"
-    Grid.Column="1"
-    Grid.Row="2"
-    Content="2"
-    FontSize="25"
-    BorderBrush="#9aeda9"
+            Background="AliceBlue"
+            Grid.Column="1"
+            Grid.Row="2"
+            Content="2"
+            FontSize="25"
+            BorderBrush="#9aeda9"
             Margin="4,81,4,5"
-    BorderThickness="2" Grid.RowSpan="2" Command="{Binding DigitCommand}"
-        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"/>
+            BorderThickness="2" Grid.RowSpan="2"
+            Command="{Binding DigitCommand}"
+            CommandParameter="{Binding Content,
+            RelativeSource={RelativeSource Self}}"/>
 
 
         <Button
-    Background="AliceBlue"
-    Grid.Column="2"
-    Grid.Row="2"
-    Content="3"
-    FontSize="25"
-    BorderBrush="#9aeda9"
+            Background="AliceBlue"
+            Grid.Column="2"
+            Grid.Row="2"
+            Content="3"
+            FontSize="25"
+            BorderBrush="#9aeda9"
             Margin="4,81,4,5"
-    BorderThickness="2" Command="{Binding DigitCommand}"
-        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}" Grid.RowSpan="2"/>
+            BorderThickness="2" Grid.RowSpan="2"
+            Command="{Binding DigitCommand}"
+            CommandParameter="{Binding Content, 
+            RelativeSource={RelativeSource Self}}"/>
+
 
         <Button
-    Background="AliceBlue"
-    Grid.Row="7"
-    FontSize="20"
-    BorderBrush="#9aeda9"
-    BorderThickness="2"
-    Grid.ColumnSpan="4"
-    Margin="2,5,2,2"
-    FontFamily="Calibri" 
-    Content="ДОБАВИТЬ"
-    Command="{Binding SendValueCommand}"
->
-        </Button>
+            Background="AliceBlue"
+            Grid.Row="7"
+            FontSize="20"
+            BorderBrush="#9aeda9"
+            BorderThickness="2"
+            Grid.ColumnSpan="4"
+            Margin="2,5,2,2"
+            FontFamily="Calibri" 
+            Content="ДОБАВИТЬ"
+            Command="{Binding SendValueCommand}"></Button>
 
-        <DockPanel
-           
 
+        <DockPanel     
             Grid.Column="0"
             Grid.Row="2"
             Background="#9aeda9"
             Grid.ColumnSpan="4"
-            Margin="25,0,25,15"
-            >
+            Margin="25,0,25,15">
 
 
-            <TextBox Text="{Binding InputText}" BorderBrush="#9aeda9" Name="inputTextBox" Background="#9aeda9" 
-         Height="70" FontSize="24" TextAlignment="Center" 
-         Width="305" PreviewTextInput="inputTextBox_PreviewTextInput"  />
-            <Button
-                
-                Margin="0 5 1 6"
-                Background="#9aeda9"
-                BorderThickness="0"
-                Height="54"
-              
-                Width="31"
-                Foreground="White"
-                Command="{Binding DeleteCommand}"
-                >
+            <TextBox 
+            Text="{Binding InputText}" 
+            BorderBrush="#9aeda9" 
+            Name="inputTextBox" 
+            Background="#9aeda9" 
+            Height="70" 
+            FontSize="24" 
+            TextAlignment="Center" 
+            Width="305" 
+            PreviewTextInput="inputTextBox_PreviewTextInput"/>
+
+
+            <Button             
+            Margin="0 5 1 6"
+            Background="#9aeda9"
+            BorderThickness="0"
+            Height="54"
+            Width="31"
+            Foreground="White"
+            Command="{Binding DeleteCommand}">
                 <mD:PackIcon Kind="Backspace" />
-
             </Button>
         </DockPanel>
-
     </Grid>
-
 </UserControl>

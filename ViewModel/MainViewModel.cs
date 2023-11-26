@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
@@ -24,7 +25,25 @@ namespace Monefy.ViewModel
         private readonly INavigationService _navigationService;
         private readonly IMessenger _messenger;
         private readonly IDataService _dataService;
+        private readonly ISerializationService _serializationService;
         private SpandingModel _balance;
+
+        private string _bg = "#7ac795";
+        public string Background
+        {
+            get => _bg;
+            set => Set(ref _bg, value);
+        }
+
+        private string _brush = "#5aa377";
+
+        public string Brush
+        {
+            get => _brush;
+            set => Set(ref _brush, value);
+        }
+
+
 
         Button check = new();
         private PieChart chart = new();
@@ -39,14 +58,25 @@ namespace Monefy.ViewModel
         }
 
         public SpandingModel Balance { get => _balance; set => Set(ref _balance, value); }
-       
-        public MainViewModel(INavigationService navigationService, IMessenger messenger, IDataService dataService)
+        public List<SpandingModel> Spendings { get; set; } 
+
+        public MainViewModel(INavigationService navigationService, IMessenger messenger, IDataService dataService, ISerializationService serializationService)
         {
             _navigationService = navigationService;
             _messenger = messenger;
             _dataService = dataService;
+            _serializationService = serializationService;
             Balance = new SpandingModel();
+            Spendings = _serializationService.Deserialize() ?? new();
 
+            foreach (var item in Spendings)
+            {
+                Chart.Series.Add(new PieSeries()
+                {
+                    Fill = item.Color,
+                    Values = new ChartValues<double> { item.Value}
+                });
+            }
 
             _messenger.Register<GenericMessage>(this, message =>
             {
@@ -61,7 +91,8 @@ namespace Monefy.ViewModel
                 if (message.Data as SpandingModel != null)
                 {
                     var tmp = message.Data as SpandingModel;
-                    if((check.Foreground as SolidColorBrush)?.Color == Colors.LimeGreen)
+                    Spendings.Add(tmp);
+                    if ((check.Foreground as SolidColorBrush)?.Color == Colors.LimeGreen)
                     {
                         Balance.Value += tmp.Value;
                     }
@@ -90,6 +121,26 @@ namespace Monefy.ViewModel
                 _dataService.SendData(Chart);
 
                 _navigationService.NavigateTo<CalculatorViewModel>();
+            });
+        }
+
+        public RelayCommand Serialize
+        {
+            get => new(() =>
+            {
+                _serializationService.Serialize(Spendings);
+            });
+        }
+
+        public RelayCommand<Button> DarkMode    
+        {
+            get => new((btn) =>
+            {
+                if (btn.Name == "DarkMode")
+                {
+                    Background = (Background == "#7ac795") ? "fc8181" : "#7ac795";
+                    Brush = (Brush == "#5aa377") ? "#a24445" : "#5aa377";
+                }
             });
         }
     }
